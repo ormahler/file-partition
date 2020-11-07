@@ -16,7 +16,7 @@ trait JobConfig {
   val maxPartitionCharLowerCase: Char = maxPartitionCharUpperCase.toLower
 
   val partitionRegex: String =
-    s"[$minPartitionCharLowerCase-$maxPartitionCharLowerCase$minPartitionCharUpperCase-$maxPartitionCharUpperCase]"
+    s"[$minPartitionCharLowerCase-$maxPartitionCharLowerCase$minPartitionCharUpperCase-$maxPartitionCharUpperCase]$$"
 
   val numPartitions: Int = 1 + maxPartitionCharUpperCase.hashCode - minPartitionCharUpperCase.hashCode
 }
